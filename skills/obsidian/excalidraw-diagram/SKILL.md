@@ -14,13 +14,48 @@ metadata:
 
 Create publication-quality Excalidraw diagrams from text content, outputting Obsidian-ready `.md` files with proper JSON structure.
 
-## Quick Start
+## Workflow
 
-1. Analyze the user's content for concepts and relationships
-2. Select the most appropriate diagram type
+### 1. Determine Target Path
+
+**Priority order:**
+
+1. **User provides path** → Verify it exists
+   ```bash
+   [ -d "$USER_PATH" ] && echo "Valid" || echo "Path not found"
+   ```
+   - If valid: use it
+   - If invalid: inform user and ask for correction
+
+2. **No path provided** → AI suggests with numbered options
+   - Analyze diagram topic/domain
+   - Search current workspace for relevant folders
+   - Present numbered list for user to choose:
+     ```
+     📁 Where should I save this diagram?
+     
+     [1] ./path/to/relevant-folder/  (matches: topic keyword)
+     [2] ./diagrams/                  (existing diagrams folder)
+     [3] ./assets/                    (general assets folder)
+     [4] ./ (current directory)
+     [5] Create new folder...
+     
+     Enter number or type custom path:
+     ```
+   - Wait for user selection before proceeding
+
+3. **Fallback** → Current working directory (`./`)
+
+### 2. Generate Diagram
+
+1. Analyze content for concepts and relationships
+2. Select appropriate diagram type
 3. Generate valid Excalidraw JSON with proper element binding
-4. Save as Obsidian-compatible `.md` file
-5. Provide viewing instructions
+
+### 3. Save & Confirm
+
+1. Save as Obsidian-compatible `.md` file to target path
+2. Provide viewing instructions
 
 ## Diagram Type Selection
 
