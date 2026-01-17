@@ -48,13 +48,13 @@ description: A clear description of what this skill does and when to use it
 ### Claude Code
 ```bash
 # Install a skill from this repo
-claude skill install isandrel/skills/skills/[skill-name]
+claude skill install isandrel/skills/skills/[category]/[skill-name]
 ```
 
 ### openskills (Cross-platform)
 ```bash
 # Install for any agent that supports openskills
-openskills install isandrel/skills/skills/[skill-name]
+openskills install isandrel/skills/skills/[category]/[skill-name]
 ```
 
 ## Resources
