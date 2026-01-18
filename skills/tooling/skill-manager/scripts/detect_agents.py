@@ -63,6 +63,13 @@ AGENTS: list[Agent] = [
         local_skills_dir=".windsurf/skills",
         detect_path=Path.home() / ".windsurf",
     ),
+    Agent(
+        name="antigravity",
+        display_name="Antigravity",
+        skills_path=Path.home() / ".gemini" / "antigravity" / "skills",
+        local_skills_dir=".agent/skills",
+        detect_path=Path.home() / ".gemini" / "antigravity",
+    ),
 ]
 
 
