@@ -1,0 +1,37 @@
+filters:
+  and:
+    - file.inFolder("Projects")
+    - 'file.ext == "md"'
+
+formulas:
+  last_updated: 'file.mtime.relative()'
+  link_count: 'file.links.length'
+
+summaries:
+  avgLinks: 'values.filter(value.isType("number")).mean().round(1)'
+
+properties:
+  formula.last_updated:
+    displayName: "Updated"
+  formula.link_count:
+    displayName: "Links"
+
+views:
+  - type: table
+    name: "All Projects"
+    order:
+      - file.name
+      - status
+      - formula.last_updated
+      - formula.link_count
+    summaries:
+      formula.link_count: avgLinks
+    groupBy:
+      property: status
+      direction: ASC
+
+  - type: list
+    name: "Quick List"
+    order:
+      - file.name
+      - status
