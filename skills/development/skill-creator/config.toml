@@ -1,0 +1,44 @@
+# Skill Creator Configuration
+# Optional configuration file for customizing skill creation
+
+[author]
+name = "isandrel"  # Default author name for new skills
+email = ""         # Optional email
+
+[defaults]
+category = "development"  # Default category for new skills
+version = "0.0.1"         # Default starting version
+
+[validation]
+# Naming rules
+min_name_length = 1
+max_name_length = 64
+allow_uppercase = false
+allow_underscores = false
+
+# Description rules
+require_description = true
+min_description_length = 50
+max_description_length = 1024
+
+# Frontmatter rules
+allowed_properties = ["name", "description", "license", "allowed-tools", "metadata"]
+
+[packaging]
+output_dir = "dist"           # Default output directory for .skill files
+compression_level = 9         # ZIP compression level (0-9)
+include_dotfiles = false      # Include hidden files in package
+exclude_patterns = [".DS_Store", "__pycache__", "*.pyc", ".git", ".venv"]
+
+[directories]
+create_scripts = true      # Create scripts/ directory in new skills
+create_references = true   # Create references/ directory in new skills
+create_assets = true       # Create assets/ directory in new skills
+
+[templates]
+# Template file paths (relative to skill-creator directory)
+skill_template = "templates/skill.template.md"                   # SKILL.md template
+readme_template = "templates/readme.template.md"                 # README.md template
+example_script_template = "templates/example_script.template.py"     # Example script template
+example_reference_template = "templates/example_reference.template.md"   # Example reference template
+example_asset_template = "templates/example_asset.template.txt"      # Example asset template
