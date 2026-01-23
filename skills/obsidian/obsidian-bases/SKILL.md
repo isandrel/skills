@@ -11,27 +11,55 @@ Create and edit valid Obsidian Bases (`.base` files) - YAML-based database views
 
 Bases use `.base` extension and contain YAML. They can also be embedded in Markdown code blocks.
 
-## Validation Script
+## Validation
 
-Use `scripts/validate.py` to validate base files:
+The skill includes a comprehensive, modular validation system for `.base` files.
+
+### Structure
+
+```
+scripts/
+├── config.py              # Configuration loader (TOML-based)
+├── validate.py            # Main entry point
+├── validate.toml          # All validation rules (customizable)
+└── validators/            # Specialized validators
+    ├── filter_validator.py
+    ├── formula_validator.py
+    ├── property_validator.py
+    ├── view_validator.py
+    └── base_validator.py
+```
+
+### Usage
 
 ```bash
-# Install dependency (first time only)
-pip install pyyaml
+# Install dependencies
+pip install pyyaml tomli
 
 # Validate a base file
 python scripts/validate.py mybase.base
 ```
 
-The script validates:
-- YAML syntax
+### Features
+
+- **Modular architecture**: Specialized validators for each section
+- **TOML configuration**: All rules externalized in `validate.toml`
+- **Comprehensive coverage**: Validates all Bases syntax from references/
+- **Detailed errors**: Context, examples, and suggestions for every issue
+- **Customizable**: Edit `validate.toml` to adjust validation rules
+
+### What It Validates
+
+- YAML syntax and structure
 - Required fields (views, view type, view name)
 - Valid view types (table, cards, list, map)
-- Filter structure
-- Formula syntax
+- Filter operators and structure
+- Formula syntax and functions
 - Property configuration
+- View fields (order, groupBy, sort, limit, columnSize, summaries)
+- All syntax elements from reference documentation
 
-## Base File Templates
+## Templates
 
 ### Minimal Template
 
@@ -67,31 +95,6 @@ views:
 ```
 
 Copy a template above or from `assets/template/` directory to start creating your own base file.
-
-## CLI Query Tool
-
-For running queries and processing base files, use **[obaq](https://github.com/knu/obaq)** - a CLI query processor for Obsidian Bases:
-
-```bash
-# Install
-npm install -g obaq
-
-# Run query from .base file
-obaq -d /path/to/vault -e @file.base
-
-# Output as CSV or Markdown
-obaq -d /path/to/vault -e @file.base -f csv
-obaq -d /path/to/vault -e @file.base -f md
-
-# Process markdown with base blocks
-obaq -d /path/to/vault file.md
-```
-
-`obaq` supports:
-- Running .base files from command line
-- Multiple output formats (JSON, CSV, Markdown)
-- Processing markdown files with base code blocks
-- All base features (filters, formulas, views)
 
 ## Complete Schema
 
