@@ -65,6 +65,7 @@ skill-name/
 │   │   ├── name: (required)
 │   │   └── description: (required)
 │   └── Markdown instructions (required)
+├── config.toml (recommended) - User-customizable settings and paths
 └── Bundled Resources (optional)
     ├── scripts/          - Executable code (Python/Bash/etc.)
     ├── references/       - Documentation intended to be loaded into context as needed
@@ -108,6 +109,40 @@ Files not intended to be loaded into context, but rather used within the output 
 - **Examples**: `assets/logo.png` for brand assets, `assets/slides.pptx` for PowerPoint templates, `assets/frontend-template/` for HTML/React boilerplate, `assets/font.ttf` for typography
 - **Use cases**: Templates, images, icons, boilerplate code, fonts, sample documents that get copied or modified
 - **Benefits**: Separates output resources from documentation, enables Claude to use files without loading them into context
+
+##### Configuration (`config.toml`, recommended)
+
+A TOML configuration file for user-customizable settings. Separates changeable values from workflow logic in SKILL.md and content templates in references.
+
+- **When to include**: When the skill has user-specific settings, file paths, or dependencies that may change across environments
+- **Use cases**: User profile data, file paths, dependency locations, feature flags, template preferences
+- **Benefits**: Single source of truth for settings, easy to update without modifying SKILL.md or references
+
+**Structure pattern** — use `base_dir` + relative paths for maintainable path groups:
+
+```toml
+# Skill-specific settings
+[settings]
+output_format = "html"   # configurable output preference
+language = "en"           # default language
+
+# Paths with a shared base — only update base_dir if root moves
+[paths]
+base_dir = "~/Documents/project/data"
+input = "raw/input.csv"
+output = "processed/output.json"
+
+# Dependencies on other skills — base_dir for the skills repo
+[dependencies]
+base_dir = "~/path/to/skills"
+other_skill = "category/skill-name"
+```
+
+**In SKILL.md**, reference config values by section:
+
+```markdown
+Read the dependency path from `config.toml` → `[dependencies].base_dir` + `[dependencies].other_skill`.
+```
 
 #### What to Not Include in a Skill
 
