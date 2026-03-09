@@ -1,0 +1,77 @@
+---
+link: "[{{ question.title }} - LeetCode](https://leetcode.com/problems/{{ question.titleSlug }}/)"
+questionId: {{ question.questionId }}
+platform: LeetCode
+number: {{ question.questionId }}
+difficulty: {{ question.difficulty }}
+company: 
+references: 
+encountered: false
+tags:
+{% for tag in question.topicTags %}  - {{ tag.name | replace(" ", "-") }}
+{% endfor %}related_problems:
+completed: false
+created: {{ now }}
+updated: {{ now }}
+---
+
+## Description
+
+{{ question.content }}
+
+{% for hint in question.hints %}> [!note]- Hint
+> {{ hint }}
+
+{% endfor %}
+## Approach
+
+> [!abstract]- Intuition
+> 
+
+> [!info]- Algorithm
+> 1. 
+
+---
+
+## Solutions
+
+### Code
+
+[tabs]
+
+- Python
+    ```python
+    class Solution:
+        def solution(self):
+    ```
+
+- Python ▶️
+    ```python
+    class Solution:
+        def solution(self):
+            pass
+
+    if __name__ == "__main__":
+        sol = Solution()
+        tests = [
+            # (input_args, expected),
+            ((), None),
+        ]
+        for i, (args, expected) in enumerate(tests, 1):
+            result = sol.solution(*args) if isinstance(args, tuple) else sol.solution(args)
+            status = "✅" if result == expected else "❌"
+            print(f"Test {i}: {status} | Input: {args} | Expected: {expected} | Got: {result}")
+    ```
+
+---
+
+## Complexity
+
+| Metric    | Complexity | Notes |
+| --------- | ---------- | ----- |
+| **Time**  |            |       |
+| **Space** |            |       |
+
+---
+
+## Notes
