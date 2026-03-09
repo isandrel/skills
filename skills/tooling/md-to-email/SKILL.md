@@ -1,10 +1,6 @@
 ---
 name: md-to-email
 description: "Transforms Markdown text into professional, styled HTML for emails. Use when you want to send emails with rich formatting (bold, lists, links, code) that look consistent across email clients. Perfect for job applications, newsletters, or professional correspondence where Markdown's simplicity is preferred but HTML's styling is required."
-metadata:
-  version: 0.2.0
-  category: tooling
-  author: isandrel
 ---
 
 # MD to Email

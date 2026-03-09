@@ -1,10 +1,6 @@
 ---
 name: {skill_name}
 description: "[TODO: Complete and informative explanation of what the skill does and when to use it. Include WHEN to use this skill - specific scenarios, file types, or tasks that trigger it.]"
-metadata:
-  version: {version}
-  category: {category}
-  author: {author}
 ---
 
 # {skill_title}

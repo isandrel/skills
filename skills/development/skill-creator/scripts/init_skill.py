@@ -127,8 +127,11 @@ def init_skill(
     if author is None:
         author = config.author.name
     
-    # Determine skill directory path
-    skill_dir = path.resolve() / skill_name
+    # Determine skill directory path — place inside category subfolder if provided
+    base_path = path.resolve()
+    if category:
+        base_path = base_path / category
+    skill_dir = base_path / skill_name
 
     # Check if directory already exists
     if skill_dir.exists():
@@ -153,10 +156,7 @@ def init_skill(
     
     skill_content = skill_template_content.format(
         skill_name=skill_name,
-        skill_title=skill_title,
-        category=category,
-        author=author,
-        version=config.defaults.version
+        skill_title=skill_title
     )
 
     skill_md_path = skill_dir / "SKILL.md"
