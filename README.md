@@ -2,25 +2,46 @@
 
 Agent Skills for Claude Code, Codex, and other AI agents.
 
+## Available Skills
+
+| Skill | Category | Description |
+|-------|----------|-------------|
+| [skill-creator](skills/development/skill-creator/) | development | Create, validate, and package professional Agent Skills |
+| [excalidraw-diagram](skills/obsidian/excalidraw-diagram/) | obsidian | Generate Excalidraw diagrams from text content for Obsidian |
+| [obsidian-bases](skills/obsidian/obsidian-bases/) | obsidian | Create and edit Obsidian Bases (.base) YAML database views |
+| [md-to-email](skills/tooling/md-to-email/) | tooling | Transform Markdown into styled HTML emails |
+| [skill-manager](skills/tooling/skill-manager/) | tooling | Install, list, and manage skills across multiple AI agents |
+
 ## Repository Structure
 
 ```
 skills/
-├── skills/           # Individual skill folders
-│   └── [skill-name]/
-│       ├── SKILL.md      # Required: Instructions + metadata
-│       ├── scripts/      # Optional: Executable code
-│       ├── references/   # Optional: Documentation
-│       └── assets/       # Optional: Templates, images
-├── spec/             # Agent Skills specification
-└── template/         # Starter template for new skills
+├── skills/               # Individual skills by category
+│   ├── development/
+│   │   └── skill-creator/
+│   ├── obsidian/
+│   │   ├── excalidraw-diagram/
+│   │   └── obsidian-bases/
+│   └── tooling/
+│       ├── md-to-email/
+│       └── skill-manager/
+├── spec/                 # Agent Skills specification
+├── template/             # Starter template for new skills
+├── CONTRIBUTING.md       # Contribution guidelines
+└── SKILLS_PROMPT.md      # Prompt for non-native agent support
 ```
 
 ## Creating a Skill
 
-1. Copy the `template/` folder and rename it
+1. Use `skill-creator` to scaffold:
+   ```bash
+   python skills/development/skill-creator/scripts/init_skill.py my-skill \
+     --path skills/ --category <category>
+   ```
 2. Edit `SKILL.md` with your skill's instructions
-3. Add any scripts, references, or assets as needed
+3. Add scripts, references, or assets as needed
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for full guidelines.
 
 ### SKILL.md Format
 
@@ -33,27 +54,17 @@ description: A clear description of what this skill does and when to use it
 # My Skill Name
 
 [Instructions that the agent will follow when this skill is active]
-
-## Examples
-- Example usage 1
-- Example usage 2
-
-## Guidelines
-- Guideline 1
-- Guideline 2
 ```
 
 ## Usage
 
 ### Claude Code
 ```bash
-# Install a skill from this repo
 claude skill install isandrel/skills/skills/[category]/[skill-name]
 ```
 
 ### openskills (Cross-platform)
 ```bash
-# Install for any agent that supports openskills
 openskills install isandrel/skills/skills/[category]/[skill-name]
 ```
 

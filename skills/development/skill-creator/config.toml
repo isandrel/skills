@@ -22,7 +22,7 @@ min_description_length = 50
 max_description_length = 1024
 
 # Frontmatter rules
-allowed_properties = ["name", "description", "license", "allowed-tools", "metadata"]
+allowed_properties = ["name", "description", "license", "allowed-tools"]
 
 [packaging]
 output_dir = "dist"           # Default output directory for .skill files
@@ -37,8 +37,8 @@ create_assets = true       # Create assets/ directory in new skills
 
 [templates]
 # Template file paths (relative to skill-creator directory)
-skill_template = "templates/skill.template.md"                   # SKILL.md template
-readme_template = "templates/readme.template.md"                 # README.md template
-example_script_template = "templates/example_script.template.py"     # Example script template
-example_reference_template = "templates/example_reference.template.md"   # Example reference template
-example_asset_template = "templates/example_asset.template.txt"      # Example asset template
+skill_template = "assets/templates/skill.template.md"                   # SKILL.md template
+readme_template = "assets/templates/readme.template.md"                 # README.md template
+example_script_template = "assets/templates/example_script.template.py"     # Example script template
+example_reference_template = "assets/templates/example_reference.template.md"   # Example reference template
+example_asset_template = "assets/templates/example_asset.template.txt"      # Example asset template

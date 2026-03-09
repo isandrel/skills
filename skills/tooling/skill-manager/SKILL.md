@@ -4,10 +4,6 @@ description: |
   Manage AI agent skills across multiple platforms. Detects installed agents,
   installs skills from GitHub, lists installed skills, and uninstalls.
   Triggers: "install skill", "manage skills", "list skills", "uninstall skill".
-metadata:
-  version: 0.1.0
-  category: tooling
-  author: isandrel
 ---
 
 # Skill Manager
