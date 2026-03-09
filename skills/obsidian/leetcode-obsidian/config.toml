@@ -1,0 +1,69 @@
+# =============================================================================
+# LeetCode Obsidian Skill Configuration
+# =============================================================================
+# All settings have sensible defaults. Override only what you need.
+# CLI flags override config values when both are provided.
+# -----------------------------------------------------------------------------
+# General Settings
+# -----------------------------------------------------------------------------
+[settings]
+# LeetCode site: "us" (leetcode.com) or "cn" (leetcode.cn)
+site = "us"
+# Download problem images to local folder
+download_images = true
+# Default programming language for solution skeleton
+# Used to extract the correct code snippet from LeetCode
+language = "python3"
+
+# HTTP User-Agent header for API requests
+# user_agent = "Mozilla/5.0 ..."
+# -----------------------------------------------------------------------------
+# Paths
+# All paths support ~ for home directory expansion.
+# Relative paths are resolved from the current working directory.
+# -----------------------------------------------------------------------------
+[paths]
+# Base output directory for generated notes
+output_dir = "."
+# Subdirectory name for downloaded images (relative to output_dir)
+image_dir = "Attachments"
+# Custom Nunjucks/Jinja2 template path (leave empty to use built-in template)
+# template = "~/my-custom-templates/leetcode.md.j2"
+template = ""
+
+# -----------------------------------------------------------------------------
+# Obsidian Integration
+# Uses the Obsidian CLI (https://help.obsidian.md/cli) when available.
+# -----------------------------------------------------------------------------
+[obsidian]
+# Enable Obsidian CLI integration (creates notes via `obsidian create`)
+enabled = false
+# Vault name (leave empty to use the active vault or cwd-based detection)
+vault = ""
+# Open note in Obsidian after creation
+open_after_create = false
+
+# -----------------------------------------------------------------------------
+# Note Format
+# Controls the generated note structure.
+# -----------------------------------------------------------------------------
+[note]
+# Filename pattern for generated notes
+# Available: {id}, {title}, {slug}, {difficulty}
+filename_pattern = "{id}. {title}"
+# Platform label in frontmatter
+platform = "LeetCode"
+# Include hints as callouts in the note
+include_hints = true
+# Include solution skeleton with test runner
+include_solution = true
+# Include complexity table
+include_complexity = true
+
+# -----------------------------------------------------------------------------
+# API Endpoints
+# Override if using a proxy or self-hosted instance.
+# -----------------------------------------------------------------------------
+[api]
+graphql_url = "https://leetcode.com/graphql"
+graphql_url_cn = "https://leetcode.cn/graphql"
