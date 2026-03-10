@@ -12,7 +12,6 @@ site = "us"
 # Download problem images to local folder
 download_images = true
 # Default programming language for solution skeleton
-# Used to extract the correct code snippet from LeetCode
 language = "python3"
 
 # HTTP User-Agent header for API requests
@@ -45,7 +44,7 @@ open_after_create = false
 
 # -----------------------------------------------------------------------------
 # Note Format
-# Controls the generated note structure.
+# Controls the generated note structure and frontmatter.
 # -----------------------------------------------------------------------------
 [note]
 # Filename pattern for generated notes
@@ -61,9 +60,18 @@ include_solution = true
 include_complexity = true
 
 # -----------------------------------------------------------------------------
+# Frontmatter
+# Additional frontmatter fields to include in every note.
+# These are added as-is to the YAML frontmatter.
+# -----------------------------------------------------------------------------
+# encountered = false
+# completed = false
+# company = ""
+# -----------------------------------------------------------------------------
 # API Endpoints
 # Override if using a proxy or self-hosted instance.
 # -----------------------------------------------------------------------------
+[frontmatter]
 [api]
 graphql_url = "https://leetcode.com/graphql"
 graphql_url_cn = "https://leetcode.cn/graphql"

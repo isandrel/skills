@@ -1,15 +1,18 @@
+{%- set url_base = "https://leetcode.com" if config.site == "us" else "https://leetcode.cn" -%}
 ---
-link: "[{{ question.title }} - LeetCode](https://leetcode.com/problems/{{ question.titleSlug }}/)"
+link: "[{{ question.title }} - {{ config.platform }}]({{ url_base }}/problems/{{ question.titleSlug }}/)"
 questionId: {{ question.questionId }}
-platform: LeetCode
+platform: {{ config.platform }}
 number: {{ question.questionId }}
 difficulty: {{ question.difficulty }}
 company: 
 references: 
 encountered: false
 tags:
-{% for tag in question.topicTags %}  - {{ tag.name | replace(" ", "-") }}
-{% endfor %}related_problems:
+{%- for tag in question.topicTags %}
+  - {{ tag.name | replace(" ", "-") }}
+{%- endfor %}
+related_problems:
 completed: false
 created: {{ now }}
 updated: {{ now }}
@@ -19,10 +22,15 @@ updated: {{ now }}
 
 {{ question.content }}
 
-{% for hint in question.hints %}> [!note]- Hint
+{%- if config.includeHints and question.hints.length > 0 %}
+
+{% for hint in question.hints %}
+> [!note]- Hint
 > {{ hint }}
 
 {% endfor %}
+{%- endif %}
+
 ## Approach
 
 > [!abstract]- Intuition
@@ -32,6 +40,7 @@ updated: {{ now }}
 > 1. 
 
 ---
+{%- if config.includeSolution %}
 
 ## Solutions
 
@@ -64,6 +73,8 @@ updated: {{ now }}
     ```
 
 ---
+{%- endif %}
+{%- if config.includeComplexity %}
 
 ## Complexity
 
@@ -73,5 +84,6 @@ updated: {{ now }}
 | **Space** |            |       |
 
 ---
+{%- endif %}
 
 ## Notes

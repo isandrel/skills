@@ -34,17 +34,17 @@ Read `config.toml` for the vault-specific icon pack configuration.
 
 ### Naming Convention
 
-| Pack | Prefix | Source | Example |
-|------|--------|--------|---------|
-| Lucide | `Li` | Native/built-in | `LiArchive`, `LiBriefcase` |
-| Simple Icons | `Si` | Brand logos | `SiObsidian`, `SiGoogle` |
-| Tabler Icons | `Ti` | General icons | `TiRobot`, `TiTemplate` |
-| Remix Icons | `Ri` | General icons | `RiBankLine` |
-| Boxicons | `Bo` | General icons | `BoBxGroup` |
-| Font Awesome Solid | `Fas` | General icons | `FasApple` |
-| RPG Awesome | `Ra` | RPG-themed | `RaApple` |
-| Icon Brew | `Ib` | Misc | — |
-| Octicons | `Oc` | GitHub icons | — |
+| Pack               | Prefix | Source          | Example                    |
+| ------------------ | ------ | --------------- | -------------------------- |
+| Lucide             | `Li`   | Native/built-in | `LiArchive`, `LiBriefcase` |
+| Simple Icons       | `Si`   | Brand logos     | `SiObsidian`, `SiGoogle`   |
+| Tabler Icons       | `Ti`   | General icons   | `TiRobot`, `TiTemplate`    |
+| Remix Icons        | `Ri`   | General icons   | `RiBankLine`               |
+| Boxicons           | `Bo`   | General icons   | `BoBxGroup`                |
+| Font Awesome Solid | `Fas`  | General icons   | `FasApple`                 |
+| RPG Awesome        | `Ra`   | RPG-themed      | `RaApple`                  |
+| Icon Brew          | `Ib`   | Misc            | —                          |
+| Octicons           | `Oc`   | GitHub icons    | —                          |
 
 ### Priority Order
 

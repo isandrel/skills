@@ -48,6 +48,12 @@ export function defaultConfig(): Config {
 		includeHints: true,
 		includeSolution: true,
 		includeComplexity: true,
+		callouts: {
+			hint: "note",
+			intuition: "abstract",
+			algorithm: "info",
+		},
+		frontmatter: {},
 
 		graphqlUrl: "https://leetcode.com/graphql",
 		graphqlUrlCn: "https://leetcode.cn/graphql",
@@ -95,6 +101,15 @@ export function loadConfig(configPath: string = DEFAULT_CONFIG_PATH): Config {
 		cfg.includeSolution = n.include_solution;
 	if (n.include_complexity !== undefined)
 		cfg.includeComplexity = n.include_complexity;
+
+	// callouts
+	const c = n.callouts ?? {};
+	if (c.hint) cfg.callouts.hint = c.hint;
+	if (c.intuition) cfg.callouts.intuition = c.intuition;
+	if (c.algorithm) cfg.callouts.algorithm = c.algorithm;
+
+	// custom frontmatter
+	if (data.frontmatter) cfg.frontmatter = data.frontmatter;
 
 	// api
 	const a = data.api ?? {};

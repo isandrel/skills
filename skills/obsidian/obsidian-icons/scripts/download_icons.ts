@@ -10,7 +10,7 @@
 
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
-import { parseToml } from "./utils";
+import { parse as parseToml } from "smol-toml";
 
 interface PackConfig {
   prefix: string;
