@@ -1,0 +1,19 @@
+{
+  "name": "leetcode-obsidian",
+  "module": "scripts/fetch_problem.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/nunjucks": "^3.2.6",
+    "@types/turndown": "^5.0.5"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "nunjucks": "^3.2.4",
+    "smol-toml": "^1.6.0",
+    "turndown": "^7.2.0"
+  }
+}

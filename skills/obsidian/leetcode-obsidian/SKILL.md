@@ -9,10 +9,9 @@ Fetch LeetCode problems via GraphQL API and generate structured Obsidian notes.
 
 ## Setup
 
-Install dependencies globally (one-time):
-
 ```bash
-bun install -g nunjucks turndown smol-toml
+cd skills/obsidian/leetcode-obsidian
+bun install
 ```
 
 ## Usage
