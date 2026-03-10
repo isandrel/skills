@@ -118,7 +118,32 @@ export async function fetchQuestion(
 		question.content = htmlToMarkdown(question.content);
 	}
 
+	// Clean HTML entities in hints (they come as HTML strings from the API)
+	if (question.hints) {
+		question.hints = question.hints.map((h: string) => cleanHtmlEntities(h));
+	}
+
 	return question as Question;
+}
+
+/** Clean common HTML entities from a string. */
+function cleanHtmlEntities(text: string): string {
+	return (
+		text
+			// Named entities
+			.replace(/&amp;/g, "&")
+			.replace(/&lt;/g, "<")
+			.replace(/&gt;/g, ">")
+			.replace(/&quot;/g, '"')
+			.replace(/&nbsp;/g, " ")
+			// Numeric entities (decimal &#NNN; and hex &#xHHH;)
+			.replace(/&#(\d+);/g, (_, n) => String.fromCharCode(Number(n)))
+			.replace(/&#x([0-9a-fA-F]+);/g, (_, h) =>
+				String.fromCharCode(Number.parseInt(h, 16)),
+			)
+			// HTML tags in plain text (e.g. <code>x</code> → `x`)
+			.replace(/<\/?code>/g, "`")
+	);
 }
 
 /** Convert HTML problem description to clean Markdown. */
@@ -128,18 +153,7 @@ function htmlToMarkdown(html: string): string {
 		bulletListMarker: "-",
 	});
 
-	let content = turndown.turndown(html);
-
-	// Clean up HTML entities turndown may leave behind
-	content = content
-		.replace(/&amp;/g, "&")
-		.replace(/&lt;/g, "<")
-		.replace(/&gt;/g, ">")
-		.replace(/&#92;/g, "\\")
-		.replace(/&quot;/g, '"')
-		.replace(/&#39;/g, "'")
+	return cleanHtmlEntities(turndown.turndown(html))
 		.replace(/\n{3,}/g, "\n\n")
 		.trim();
-
-	return content;
 }

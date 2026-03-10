@@ -38,6 +38,12 @@ export interface Config {
 	includeHints: boolean;
 	includeSolution: boolean;
 	includeComplexity: boolean;
+	callouts: {
+		hint: string;
+		intuition: string;
+		algorithm: string;
+	};
+	frontmatter: Record<string, unknown>;
 
 	// api
 	graphqlUrl: string;

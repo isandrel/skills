@@ -17,7 +17,7 @@ export function renderNote(question: Question, cfg: Config): string {
 
 	const env = new nunjucks.Environment(
 		new nunjucks.FileSystemLoader(templateDir),
-		{ trimBlocks: false, lstripBlocks: false },
+		{ trimBlocks: false, lstripBlocks: false, autoescape: false },
 	);
 
 	const now = new Date().toISOString().slice(0, 16); // YYYY-MM-DDTHH:mm
