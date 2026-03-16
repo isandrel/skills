@@ -28,6 +28,12 @@ bun scripts/fetch_problem.ts 1
 # By slug
 bun scripts/fetch_problem.ts two-sum
 
+# Fetch multiple problems in one run
+bun scripts/fetch_problem.ts two-sum add-two-numbers 3sum
+
+# Fetch from a batch file
+bun scripts/fetch_problem.ts --batch-file ./problems.txt
+
 # With options
 bun scripts/fetch_problem.ts two-sum --output-dir ~/vault/LeetCode/ --download-images
 
@@ -42,6 +48,7 @@ bun scripts/fetch_problem.ts two-sum --obsidian --vault "My Vault" --output-dir 
 
 | Flag                | Default            | Description                                                           |
 | ------------------- | ------------------ | --------------------------------------------------------------------- |
+| `--batch-file`      | none               | Read identifiers from a file, one per line (`#` comments supported)   |
 | `--output-dir`      | from config or `.` | Directory to save the note (or vault-relative path with `--obsidian`) |
 | `--image-dir`       | `Attachments`      | Subdirectory for downloaded images                                    |
 | `--download-images` | from config        | Download problem images locally                                       |
@@ -53,6 +60,8 @@ bun scripts/fetch_problem.ts two-sum --obsidian --vault "My Vault" --output-dir 
 | `--open`            | from config        | Open note in Obsidian after creation                                  |
 
 > **Obsidian CLI**: When `--obsidian` is enabled, notes are created via `obsidian create path=<path> content=<text>` for proper vault indexing. Auto-falls back to file write if CLI is unavailable.
+
+For batch runs, the script processes identifiers sequentially and prints a success/failure summary at the end. You can combine positional identifiers and `--batch-file` in the same invocation.
 
 ### Configuration
 
