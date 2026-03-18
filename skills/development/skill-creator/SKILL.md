@@ -37,10 +37,14 @@ skill-name/
 │   └── Markdown instructions (required)
 ├── config.toml (recommended) - User-customizable settings
 └── Bundled Resources (optional)
+    ├── references/       - Zero-padded step files: 01-step.md, 02-step.md…
     ├── scripts/          - Executable code (Python/Bash/etc.)
-    ├── references/       - Documentation loaded into context as needed
     └── assets/           - Files used in output (templates, icons, fonts)
 ```
+
+**Step file naming**: Always zero-pad — `01-fetch.md`, `02-solve.md` — **never** `1-fetch.md`. This ensures correct sort order.
+
+See [references/workflows.md](references/workflows.md) for the step file anatomy template and checklist pattern.
 
 ### SKILL.md Frontmatter
 
@@ -105,9 +109,23 @@ When editing, remember the skill is for another AI agent instance. Include non-o
 
 #### Learn Proven Design Patterns
 
-- **Multi-step processes**: See [references/workflows.md](references/workflows.md)
+- **Multi-step workflows** (checklist format, 01-/02- step files, step anatomy): See [references/workflows.md](references/workflows.md)
 - **Output formats or quality standards**: See [references/output-patterns.md](references/output-patterns.md)
 - **Core principles & progressive disclosure**: See [references/skill-design-guide.md](references/skill-design-guide.md)
+
+**Multi-step workflow checklist pattern** (use in SKILL.md when skill has ≥3 distinct steps):
+
+```markdown
+## Workflow
+
+Progress:
+- [ ] Step 1: Do X → Read [references/01-do-x.md](references/01-do-x.md)
+- [ ] Step 2: Do Y → Read [references/02-do-y.md](references/02-do-y.md)
+- [ ] Step 3: Verify → Read [references/03-verify.md](references/03-verify.md)
+
+**Default**: Run Step 1 only.
+**Full workflow**: Run Steps 1 → 2 → 3 when user asks.
+```
 
 #### Start with Reusable Contents
 
