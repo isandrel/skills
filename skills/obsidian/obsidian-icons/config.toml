@@ -1,18 +1,11 @@
 # Obsidian Icons Skill Configuration
-
 [vault]
 # Path to the Obsidian vault root
 path = "~/path/to/your/obsidian/vault"
-
 # Relative path to icon data file from vault root
 data_json = ".obsidian/plugins/obsidian-icon-folder/data.json"
-
 # Relative path to icon SVG cache directory from vault root
 icons_dir = ".obsidian/icons"
-
-[packs]
-# Icon pack source URLs and versions
-# Used by download_icons.py to fetch missing SVGs
 
 [packs.simple-icons]
 prefix = "Si"
