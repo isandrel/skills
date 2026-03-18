@@ -10,7 +10,7 @@ This skill converts Markdown into styled HTML emails. It solves the problem of i
 ## Workflow
 
 1. **Draft in Markdown**: Write your email content using standard Markdown syntax.
-   - Use trailing double spaces (`  `) at end of lines to force line breaks (e.g. in signatures).
+   - Use trailing double spaces (``) at end of lines to force line breaks (e.g. in signatures).
 2. **Transform to HTML**: Convert the Markdown into styled HTML using the script and a template.
 3. **Preview**: Open the HTML file in a browser to preview.
 4. **Use**: Copy-paste the rendered HTML into your email client, or use a tool like `gmail.createDraft` with `isHtml: true`.
@@ -48,10 +48,10 @@ open message.html
 
 - **Line breaks in signatures**: Use trailing double spaces at end of each line:
   ```markdown
-  --  
-  **Name**  
-  **Title | Company**  
-  📧 email@example.com  
+  --\
+  **Name**\
+  **Title | Company**\
+  📧 email@example.com\
   📞 +1 (xxx) xxx-xxxx
   ```
 - **Links**: Use `[text](url)` for clickable links.
@@ -61,8 +61,10 @@ open message.html
 ## Resources
 
 ### scripts/
+
 - `md_to_html.py`: Converts Markdown files to HTML using the `markdown` library and a template.
 
 ### references/
+
 - `email_template.html`: Professional styled template (600px, system sans-serif).
 - `gmail_template.html`: Gmail-matching minimal template (Arial, 14px).

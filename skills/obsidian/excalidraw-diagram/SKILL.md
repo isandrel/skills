@@ -29,13 +29,13 @@ Create publication-quality Excalidraw diagrams from text content, outputting Obs
    - Present numbered list for user to choose:
      ```
      📁 Where should I save this diagram?
-     
+
      [1] ./path/to/relevant-folder/  (matches: topic keyword)
      [2] ./diagrams/                  (existing diagrams folder)
      [3] ./assets/                    (general assets folder)
      [4] ./ (current directory)
      [5] Create new folder...
-     
+
      Enter number or type custom path:
      ```
    - Wait for user selection before proceeding
@@ -57,16 +57,16 @@ Create publication-quality Excalidraw diagrams from text content, outputting Obs
 
 Choose based on content structure and communication goals:
 
-| Type | Use For | Key Tips |
-|------|---------|----------|
-| **Flowchart** | Sequential processes, decision trees, algorithms | 7-10 steps max; diamonds for decisions |
-| **Mind Map** | Brainstorming, topic exploration | Central node largest; 3-4 depth levels |
-| **Hierarchy** | Org charts, taxonomies | Align siblings; consistent spacing |
-| **Relationship** | Dependencies, entity relationships | Label connections; minimize crossing |
-| **Comparison** | Feature comparison, pros/cons | Side-by-side; color-code pos/neg |
-| **Timeline** | Events, milestones | Alternate labels above/below |
-| **Matrix** | Priority mapping, 2D classification | Label both axes; name quadrants |
-| **Freeform** | Sketches, mixed diagrams | Group related elements; use frames |
+| Type             | Use For                                          | Key Tips                               |
+| ---------------- | ------------------------------------------------ | -------------------------------------- |
+| **Flowchart**    | Sequential processes, decision trees, algorithms | 7-10 steps max; diamonds for decisions |
+| **Mind Map**     | Brainstorming, topic exploration                 | Central node largest; 3-4 depth levels |
+| **Hierarchy**    | Org charts, taxonomies                           | Align siblings; consistent spacing     |
+| **Relationship** | Dependencies, entity relationships               | Label connections; minimize crossing   |
+| **Comparison**   | Feature comparison, pros/cons                    | Side-by-side; color-code pos/neg       |
+| **Timeline**     | Events, milestones                               | Alternate labels above/below           |
+| **Matrix**       | Priority mapping, 2D classification              | Label both axes; name quadrants        |
+| **Freeform**     | Sketches, mixed diagrams                         | Group related elements; use frames     |
 
 ## Output Format
 
@@ -77,17 +77,18 @@ Choose based on content structure and communication goals:
 excalidraw-plugin: parsed
 tags: [excalidraw]
 ---
-==⚠  Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠== You can decompress Drawing data with the command palette: 'Decompress current Excalidraw file'. For more info check in plugin settings under 'Saving'
+
+==⚠ Switch to EXCALIDRAW VIEW in the MORE OPTIONS menu of this document. ⚠== You can decompress Drawing data with the command palette: 'Decompress current Excalidraw file'. For more info check in plugin settings under 'Saving'
 
 # Excalidraw Data
 
 ## Text Elements
+
 %%
+
 ## Drawing
-\`\`\`json
-{EXCALIDRAW_JSON}
-\`\`\`
-%%
+
+\`\`\`json {EXCALIDRAW_JSON} \`\`\` %%
 ```
 
 ### Critical Requirements

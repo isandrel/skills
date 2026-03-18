@@ -20,10 +20,11 @@ uv pip install markdown
 ## Usage
 
 ### As a User
-Ask your agent:
-"Can you convert this markdown to a beautiful email draft for me?"
+
+Ask your agent: "Can you convert this markdown to a beautiful email draft for me?"
 
 ### As a Developer
+
 The skill provides a script to generate the HTML:
 
 ```bash

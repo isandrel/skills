@@ -371,6 +371,7 @@ Embed in Markdown files:
 ![[MyBase.base]]
 
 <!-- Specific view -->
+
 ![[MyBase.base#View Name]]
 ```
 

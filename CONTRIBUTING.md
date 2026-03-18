@@ -37,13 +37,13 @@ Before submitting a PR, verify:
 
 ## Naming Conventions
 
-| Item | Convention | Example |
-|------|-----------|---------|
-| Skill directory | `kebab-case` | `md-to-email` |
-| Category directory | `lowercase` | `tooling` |
-| SKILL.md `name` field | Must match directory name | `md-to-email` |
-| Scripts | `snake_case.py` | `validate.py` |
-| References | `kebab-case.md` | `design-system.md` |
+| Item                  | Convention                | Example            |
+| --------------------- | ------------------------- | ------------------ |
+| Skill directory       | `kebab-case`              | `md-to-email`      |
+| Category directory    | `lowercase`               | `tooling`          |
+| SKILL.md `name` field | Must match directory name | `md-to-email`      |
+| Scripts               | `snake_case.py`           | `validate.py`      |
+| References            | `kebab-case.md`           | `design-system.md` |
 
 ## Frontmatter Spec
 

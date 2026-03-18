@@ -5,6 +5,7 @@ This project uses the **Agent Skills** format for reusable AI instructions. Skil
 ## What Are Skills?
 
 Skills are directories containing a `SKILL.md` file that defines:
+
 - **When** to activate (triggers, keywords)
 - **What** to do (step-by-step instructions)
 - **How** to do it (examples, guidelines, references)
@@ -14,12 +15,14 @@ Skills are directories containing a `SKILL.md` file that defines:
 Search for skills in this order (first match wins):
 
 ### 1. Project-Local Skills
+
 ```
 ./.agent/skills/           # Current project
 ./skills/                  # Alternative project location
 ```
 
 ### 2. User-Level Skills
+
 ```
 ~/.codex/skills/           # OpenAI Codex CLI
 ~/.claude/skills/          # Claude Code
@@ -28,6 +31,7 @@ Search for skills in this order (first match wins):
 ```
 
 ### 3. System-Level Skills
+
 ```
 /usr/local/share/agent-skills/
 ```
@@ -46,6 +50,7 @@ These tools natively understand the `SKILL.md` format:
 For tools **without native support**, use this prompt to enable skill usage.
 
 Each skill folder structure:
+
 ```
 skill-name/
 ├── SKILL.md              # Required: Instructions and metadata
@@ -73,19 +78,25 @@ metadata:
 ## How to Use Skills
 
 ### 1. Skill Discovery
+
 When the user's request matches a skill's description or triggers:
+
 - Read the skill's `SKILL.md` file
 - Follow its instructions precisely
 - Reference additional files in `scripts/`, `references/`, or `assets/` as needed
 
 ### 2. Skill Activation
+
 A skill should be activated when:
+
 - User explicitly mentions the skill name
 - User's request matches keywords in the skill's description
 - The task domain aligns with the skill's purpose
 
 ### 3. Skill Execution
+
 When executing a skill:
+
 1. Load the full `SKILL.md` content
 2. Follow the instructions step-by-step
 3. Load referenced files only when needed (progressive disclosure)
@@ -97,11 +108,13 @@ When executing a skill:
 To discover available skills, list the contents of the skills directory. Each subdirectory with a `SKILL.md` file is a skill.
 
 ### Listing Skills
+
 ```bash
 ls ~/.codex/skills/
 ```
 
 ### Reading a Skill
+
 ```bash
 cat ~/.codex/skills/{skill-name}/SKILL.md
 ```
@@ -126,4 +139,4 @@ User: "Create a flowchart diagram of the login process"
 
 ---
 
-*This prompt enables AI assistants to use Agent Skills even in environments that don't natively support the SKILL.md format.*
+_This prompt enables AI assistants to use Agent Skills even in environments that don't natively support the SKILL.md format._

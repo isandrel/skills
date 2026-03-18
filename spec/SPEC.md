@@ -36,6 +36,7 @@ description: |            # What the skill does and when to use it
 ### Content (Markdown)
 
 The body contains:
+
 - **Instructions**: What the agent should do
 - **Examples**: Sample inputs/outputs
 - **Guidelines**: Constraints and preferences
@@ -43,6 +44,7 @@ The body contains:
 ## Progressive Disclosure
 
 Skills use progressive disclosure to maintain concise context:
+
 - Full instructions load only when the skill is activated
 - References are loaded on-demand when needed
 - Scripts are executed only when called
@@ -50,6 +52,7 @@ Skills use progressive disclosure to maintain concise context:
 ## Compatibility
 
 This spec is compatible with:
+
 - Claude Code (Anthropic)
 - OpenAI Codex
 - GitHub Copilot (via AGENTS.md)

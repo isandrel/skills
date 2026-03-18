@@ -187,6 +187,7 @@ Complete reference for Excalidraw element types and properties.
 ### Bind Text to Container
 
 Container element:
+
 ```json
 {
   "type": "rectangle",
@@ -196,6 +197,7 @@ Container element:
 ```
 
 Text element:
+
 ```json
 {
   "type": "text",
