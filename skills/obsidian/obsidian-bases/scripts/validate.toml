@@ -1,13 +1,12 @@
 # Validation Configuration for Obsidian Bases
 # This file contains ALL syntax elements from references/
-
 [validation]
 allow_unknown_property_fields = true
-allow_unknown_view_fields     = true
-require_view_name             = true
-require_view_type             = true
-require_views                 = true
-warn_missing_display_name     = true
+allow_unknown_view_fields = true
+require_view_name = true
+require_view_type = true
+require_views = true
+warn_missing_display_name = true
 
 [view_types]
 valid = ["cards", "list", "map", "table"]
@@ -22,38 +21,18 @@ built_in = ["Average", "Count", "Max", "Min", "Sum"]
 known = ["displayName", "size"]
 
 [view_fields]
-known = [
-    "columnSize",
-    "filters",
-    "groupBy",
-    "limit",
-    "name",
-    "order",
-    "sort",
-    "summaries",
-    "type",
-]
+known = ["columnSize", "filters", "groupBy", "limit", "name", "order", "sort", "summaries", "type"]
 
 [filter_operators]
 comparison = ["!=", "<", "<=", "==", ">", ">="]
-logical    = ["!", "&&", "||"]
+logical = ["!", "&&", "||"]
 
 [file_functions]
 valid = ["hasLink", "hasTag", "inFolder", "matches"]
 
 # Formula functions from references/formulas.md
 [formula_functions]
-date = [
-    "date",
-    "day",
-    "format",
-    "hour",
-    "minute",
-    "month",
-    "relative",
-    "today",
-    "year",
-]
+date = ["date", "day", "format", "hour", "minute", "month", "relative", "today", "year"]
 global = ["contains", "default", "if"]
 list = ["filter", "join", "length", "map", "mean", "sum"]
 number = ["max", "min", "round"]
@@ -62,7 +41,7 @@ type = ["isType"]
 
 # File properties from references/properties.md
 [file_properties]
-basic      = ["file.basename", "file.ext", "file.folder", "file.name", "file.path"]
-links      = ["file.inlinks", "file.links", "file.outlinks", "file.tags"]
-size       = ["file.size"]
+basic = ["file.basename", "file.ext", "file.folder", "file.name", "file.path"]
+links = ["file.inlinks", "file.links", "file.outlinks", "file.tags"]
+size = ["file.size"]
 timestamps = ["file.ctime", "file.mtime"]
