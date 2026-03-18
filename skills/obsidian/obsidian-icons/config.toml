@@ -8,28 +8,28 @@ data_json = ".obsidian/plugins/obsidian-icon-folder/data.json"
 icons_dir = ".obsidian/icons"
 
 [packs.simple-icons]
-prefix = "Si"
-version = "11.10.0"
-base_url = "https://raw.githubusercontent.com/simple-icons/simple-icons/{version}/icons/{slug}.svg"
+prefix    = "Si"
+version   = "11.10.0"
+base_url  = "https://raw.githubusercontent.com/simple-icons/simple-icons/{version}/icons/{slug}.svg"
 index_url = "https://raw.githubusercontent.com/simple-icons/simple-icons/{version}/_data/simple-icons.json"
 
 [packs.lucide-icons]
-prefix = "Li"
-version = "0.363.0"
+prefix   = "Li"
+version  = "0.363.0"
 base_url = "https://raw.githubusercontent.com/lucide-icons/lucide/{version}/icons/{slug}.svg"
 
 [packs.tabler-icons]
-prefix = "Ti"
-version = "3.1.0"
+prefix   = "Ti"
+version  = "3.1.0"
 base_url = "https://raw.githubusercontent.com/tabler/tabler-icons/{version}/icons/outline/{slug}.svg"
 
 [packs.remix-icons]
-prefix = "Ri"
+prefix  = "Ri"
 version = "4.6.0"
 # Remix Icons uses a different structure; manual download may be needed
 base_url = ""
 
 [packs.boxicons]
-prefix = "Bo"
-version = "2.1.4"
+prefix   = "Bo"
+version  = "2.1.4"
 base_url = ""
