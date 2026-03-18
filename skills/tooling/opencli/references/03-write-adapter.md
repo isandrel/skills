@@ -1,6 +1,7 @@
 # Step 3: Write the Adapter
 
 ## Table of Contents
+
 - [File Location](#file-location)
 - [YAML Adapter Templates](#yaml-adapter-templates)
   - [Tier 1: Public API](#tier-1-public-api)
@@ -188,68 +189,69 @@ Use for: header auth (CSRF/Bearer tokens), complex XHR, GraphQL, or any pipeline
 
 ```typescript
 // src/clis/<site>/<name>.ts
-import { cli } from '../../registry.js';
-import { Strategy } from '../../strategies/index.js';
+import { cli } from "../../registry.js";
+import { Strategy } from "../../strategies/index.js";
 
 cli({
-  site: 'mysite',
-  name: 'trending',
-  description: 'Get trending items from mysite',
-  domain: 'www.mysite.com',
-  strategy: Strategy.HEADER,
-  args: {
-    limit: { type: 'int', default: 20 },
-  },
-  columns: ['rank', 'title', 'score'],
-  func: async (page, kwargs) => {
-    await page.goto('https://www.mysite.com');
+    site: "mysite",
+    name: "trending",
+    description: "Get trending items from mysite",
+    domain: "www.mysite.com",
+    strategy: Strategy.HEADER,
+    args: {
+        limit: { type: "int", default: 20 },
+    },
+    columns: ["rank", "title", "score"],
+    func: async (page, kwargs) => {
+        await page.goto("https://www.mysite.com");
 
-    // Extract auth token from cookies / DOM
-    const token = await page.evaluate(() => {
-      const match = document.cookie.match(/csrf_token=([^;]+)/);
-      return match ? match[1] : '';
-    });
+        // Extract auth token from cookies / DOM
+        const token = await page.evaluate(() => {
+            const match = document.cookie.match(/csrf_token=([^;]+)/);
+            return match ? match[1] : "";
+        });
 
-    const data = await page.evaluate(async (token: string) => {
-      const res = await fetch('/api/trending', {
-        headers: { 'x-csrf-token': token },
-        credentials: 'include',
-      });
-      return res.json();
-    }, token);
+        const data = await page.evaluate(async (token: string) => {
+            const res = await fetch("/api/trending", {
+                headers: { "x-csrf-token": token },
+                credentials: "include",
+            });
+            return res.json();
+        }, token);
 
-    return (data.items || [])
-      .slice(0, kwargs.limit)
-      .map((item: any, i: number) => ({
-        rank: i + 1,
-        title: item.title,
-        score: item.score,
-      }));
-  },
+        return (data.items || [])
+            .slice(0, kwargs.limit)
+            .map((item: any, i: number) => ({
+                rank: i + 1,
+                title: item.title,
+                score: item.score,
+            }));
+    },
 });
 ```
 
 Then register in `src/clis/index.ts`:
+
 ```typescript
-import './mysite/trending.js';
+import "./mysite/trending.js";
 ```
 
 ---
 
 ## Pipeline Step Reference
 
-| Step | Description | Example |
-|---|---|---|
-| `fetch` | HTTP GET (Node.js or browser) | `fetch: { url: "https://..." }` |
-| `navigate` | Navigate browser to URL | `navigate: https://...` |
-| `evaluate` | Run JS in browser page context | `evaluate: \| (async()=>{...})()` |
-| `select` | Extract sub-path from data | `select: data.items` |
-| `map` | Transform each item's fields | `map: { rank: ${{ index+1 }} }` |
-| `filter` | Filter items by condition | `filter: ${{ item.score > 0 }}` |
-| `sort` | Sort by field | `sort: { by: score, order: desc }` |
-| `limit` | Cap result count | `limit: ${{ args.limit }}` |
-| `wait` | Wait N seconds | `wait: 3` |
-| `tap` | Call Pinia/Vuex store action | see Tier 4 template above |
+| Step       | Description                    | Example                            |
+| ---------- | ------------------------------ | ---------------------------------- |
+| `fetch`    | HTTP GET (Node.js or browser)  | `fetch: { url: "https://..." }`    |
+| `navigate` | Navigate browser to URL        | `navigate: https://...`            |
+| `evaluate` | Run JS in browser page context | `evaluate: \| (async()=>{...})()`  |
+| `select`   | Extract sub-path from data     | `select: data.items`               |
+| `map`      | Transform each item's fields   | `map: { rank: ${{ index+1 }} }`    |
+| `filter`   | Filter items by condition      | `filter: ${{ item.score > 0 }}`    |
+| `sort`     | Sort by field                  | `sort: { by: score, order: desc }` |
+| `limit`    | Cap result count               | `limit: ${{ args.limit }}`         |
+| `wait`     | Wait N seconds                 | `wait: 3`                          |
+| `tap`      | Call Pinia/Vuex store action   | see Tier 4 template above          |
 
 ---
 

@@ -13,6 +13,7 @@ opencli explore https://news.ycombinator.com --site hackernews
 ```
 
 Outputs to `.opencli/explore/<site>/`:
+
 - `metadata.json` — domain, framework detected (Vue/React/Pinia/Vuex), auth recommendations
 - `endpoints.json` — discovered API endpoints with methods and sample payloads
 - `candidates/` — generated YAML candidates (used by `synthesize`)
@@ -32,11 +33,11 @@ Outputs to `.opencli/explore/<site>/`:
 
 `explore` also detects frontend frameworks, which affects strategy choice:
 
-| Detected | Implication |
-|---|---|
+| Detected         | Implication                                    |
+| ---------------- | ---------------------------------------------- |
 | Vue + Pinia/Vuex | `intercept` strategy (`tap` step) is available |
-| React | Usually `cookie` or `header` strategy |
-| None / static | Likely `public` strategy |
+| React            | Usually `cookie` or `header` strategy          |
+| None / static    | Likely `public` strategy                       |
 
 ## Gotchas
 

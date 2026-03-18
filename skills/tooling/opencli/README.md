@@ -14,11 +14,11 @@ Guides an AI agent through the full adapter development workflow:
 
 ## Example Prompts
 
-- *"Add a new opencli adapter for reddit's saved posts"*
-- *"Create a YAML adapter for HackerNews job listings"*
-- *"Which opencli strategy should I use for a site that needs a CSRF token?"*
-- *"Debug why my zhihu adapter returns empty results"*
-- *"Run opencli cascade on this API endpoint to find the auth strategy"*
+- _"Add a new opencli adapter for reddit's saved posts"_
+- _"Create a YAML adapter for HackerNews job listings"_
+- _"Which opencli strategy should I use for a site that needs a CSRF token?"_
+- _"Debug why my zhihu adapter returns empty results"_
+- _"Run opencli cascade on this API endpoint to find the auth strategy"_
 
 ## Prerequisites
 
@@ -42,10 +42,10 @@ opencli/
 
 ## Authentication Strategies (Quick Reference)
 
-| Strategy | When | Browser |
-|---|---|---|
-| `public` | Open API, no auth | No |
-| `cookie` | Session cookies sufficient | Yes |
-| `header` | CSRF / Bearer token needed | Yes |
-| `intercept` | Vue + Pinia/Vuex XHR | Yes |
-| `ui` | No accessible API | Yes |
+| Strategy    | When                       | Browser |
+| ----------- | -------------------------- | ------- |
+| `public`    | Open API, no auth          | No      |
+| `cookie`    | Session cookies sufficient | Yes     |
+| `header`    | CSRF / Bearer token needed | Yes     |
+| `intercept` | Vue + Pinia/Vuex XHR       | Yes     |
+| `ui`        | No accessible API          | Yes     |
