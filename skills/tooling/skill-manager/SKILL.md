@@ -8,13 +8,11 @@ description: |
 
 # Skill Manager
 
-Universal skill manager for AI coding agents. Automatically detects installed agents
-and installs skills using the best available method.
+Universal skill manager for AI coding agents. Automatically detects installed agents and installs skills using the best available method.
 
 ## Supported Agents
 
-Run `scripts/detect_agents.py` to see which agents are available on this system.
-Agent definitions are in `references/agents.md` for easy extensibility.
+Run `scripts/detect_agents.py` to see which agents are available on this system. Agent definitions are in `references/agents.md` for easy extensibility.
 
 ## Commands
 
@@ -25,11 +23,13 @@ python scripts/install.py <source> [options]
 ```
 
 **Source formats:**
+
 - GitHub shorthand: `owner/repo/path/to/skill`
 - GitHub URL: `https://github.com/owner/repo/tree/main/skills/my-skill`
 - Local path: `/path/to/local/skill`
 
 **Options:**
+
 | Option             | Description                                            |
 | ------------------ | ------------------------------------------------------ |
 | `--agents <a1,a2>` | Install to specific agents (default: `all`)            |

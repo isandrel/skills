@@ -19,6 +19,7 @@
 ## Element Index System
 
 Use alphabetical indexing for layer ordering:
+
 - `a0`, `a1`, `a2` ... for first layer
 - `b0`, `b1`, `b2` ... for second layer
 - Arrows typically on higher layer than shapes
@@ -26,6 +27,7 @@ Use alphabetical indexing for layer ordering:
 ## Element ID Conventions
 
 Use semantic, readable IDs:
+
 - `title-main`, `node-auth`, `arrow-1-to-2`
 - Avoid: `abcd1234`, `elem1`, `x`
 
@@ -95,11 +97,13 @@ Use semantic, readable IDs:
 ```
 
 #### Arrow Labels
+
 - Place **Yes/No** labels near decision diamonds
 - Main flow continues downward or rightward
 - Alternatives/errors branch left
 
 #### Layout
+
 - **Title**: Top center, largest text
 - **Main flow**: Vertical, top-to-bottom
 - **Errors**: Branch left from decisions

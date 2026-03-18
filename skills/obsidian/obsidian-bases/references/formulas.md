@@ -91,6 +91,7 @@ formulas:
 ```
 
 Common format tokens:
+
 - `YYYY` - 4-digit year
 - `MM` - 2-digit month
 - `DD` - 2-digit day
@@ -125,6 +126,7 @@ formulas:
 ```
 
 Constants:
+
 - 1 day = 86400000 milliseconds
 - 1 hour = 3600000 milliseconds
 - 1 minute = 60000 milliseconds

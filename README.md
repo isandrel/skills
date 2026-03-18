@@ -4,13 +4,13 @@ Agent Skills for Claude Code, Codex, and other AI agents.
 
 ## Available Skills
 
-| Skill | Category | Description |
-|-------|----------|-------------|
-| [skill-creator](skills/development/skill-creator/) | development | Create, validate, and package professional Agent Skills |
-| [excalidraw-diagram](skills/obsidian/excalidraw-diagram/) | obsidian | Generate Excalidraw diagrams from text content for Obsidian |
-| [obsidian-bases](skills/obsidian/obsidian-bases/) | obsidian | Create and edit Obsidian Bases (.base) YAML database views |
-| [md-to-email](skills/tooling/md-to-email/) | tooling | Transform Markdown into styled HTML emails |
-| [skill-manager](skills/tooling/skill-manager/) | tooling | Install, list, and manage skills across multiple AI agents |
+| Skill                                                     | Category    | Description                                                 |
+| --------------------------------------------------------- | ----------- | ----------------------------------------------------------- |
+| [skill-creator](skills/development/skill-creator/)        | development | Create, validate, and package professional Agent Skills     |
+| [excalidraw-diagram](skills/obsidian/excalidraw-diagram/) | obsidian    | Generate Excalidraw diagrams from text content for Obsidian |
+| [obsidian-bases](skills/obsidian/obsidian-bases/)         | obsidian    | Create and edit Obsidian Bases (.base) YAML database views  |
+| [md-to-email](skills/tooling/md-to-email/)                | tooling     | Transform Markdown into styled HTML emails                  |
+| [skill-manager](skills/tooling/skill-manager/)            | tooling     | Install, list, and manage skills across multiple AI agents  |
 
 ## Repository Structure
 
@@ -59,11 +59,13 @@ description: A clear description of what this skill does and when to use it
 ## Usage
 
 ### Claude Code
+
 ```bash
 claude skill install isandrel/skills/skills/[category]/[skill-name]
 ```
 
 ### openskills (Cross-platform)
+
 ```bash
 openskills install isandrel/skills/skills/[category]/[skill-name]
 ```

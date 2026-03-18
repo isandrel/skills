@@ -83,7 +83,7 @@ The `assets/template/` directory contains:
 
 - **task-tracker.base**: Formulas, grouping, summaries
 - **reading-list.base**: Card view, tag filtering
-- **project-notes.base**: Custom summaries, folder filtering  
+- **project-notes.base**: Custom summaries, folder filtering
 - **daily-notes.base**: Regex filtering, date formatting
 
 ## References

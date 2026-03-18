@@ -175,6 +175,7 @@ properties:
 ```
 
 Property name can be:
+
 - Custom property: `property_name`
 - Formula property: `formula.formula_name`
 - File property: `file.property_name`
@@ -324,12 +325,14 @@ formulas:
 ### 1. Consistent Naming
 
 Use consistent naming across notes:
+
 - `snake_case` or `camelCase`
 - Descriptive names: `completion_date` not `cd`
 
 ### 2. Type Consistency
 
 Keep property types consistent:
+
 - `priority` always a number (1-5)
 - `status` always a string ("todo", "done", etc.)
 - `due` always a date (YYYY-MM-DD)

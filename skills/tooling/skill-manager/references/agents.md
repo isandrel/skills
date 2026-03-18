@@ -27,6 +27,7 @@ Agent definitions for skill-manager. Add new agents here.
 | **Docs**             | [Claude Code Skills](https://docs.anthropic.com/en/docs/claude-code/skills) |
 
 **Notes:**
+
 - Skills are auto-loaded on startup
 - Supports both user (`~/.claude/skills/`) and project (`.claude/skills/`) skills
 - Project skills take precedence
@@ -43,6 +44,7 @@ Agent definitions for skill-manager. Add new agents here.
 | **Docs**             | [Codex Skills](https://github.com/openai/codex) |
 
 **Notes:**
+
 - Similar skill format to Claude Code
 - Curated skills at `openai/skills` repo
 - Preinstalled system skills in `.system/`
@@ -54,11 +56,12 @@ Agent definitions for skill-manager. Add new agents here.
 | Property             | Value                                              |
 | -------------------- | -------------------------------------------------- |
 | **CLI**              | `opencode`                                         |
-| **Built-in install** | ❌ (use file-based)                                 |
+| **Built-in install** | ❌ (use file-based)                                |
 | **Config**           | `~/.config/opencode/opencode.jsonc`                |
 | **Docs**             | [OpenCode Skills](https://opencode.ai/docs/skills) |
 
 **Notes:**
+
 - Searches for `SKILL.md` in configured paths
 - Compatible with Claude Code skill format
 
@@ -68,12 +71,13 @@ Agent definitions for skill-manager. Add new agents here.
 
 | Property             | Value                                                        |
 | -------------------- | ------------------------------------------------------------ |
-| **CLI**              | ❌                                                            |
-| **Built-in install** | ❌ (use file-based)                                           |
+| **CLI**              | ❌                                                           |
+| **Built-in install** | ❌ (use file-based)                                          |
 | **Config**           | `~/.cursor/`                                                 |
 | **Docs**             | [Cursor Rules](https://docs.cursor.com/context/rules-for-ai) |
 
 **Notes:**
+
 - Uses `.cursorrules` file format
 - Skills in `~/.cursor/skills/` are experimental
 
@@ -83,12 +87,13 @@ Agent definitions for skill-manager. Add new agents here.
 
 | Property             | Value                                              |
 | -------------------- | -------------------------------------------------- |
-| **CLI**              | ❌                                                  |
-| **Built-in install** | ❌ (use file-based)                                 |
+| **CLI**              | ❌                                                 |
+| **Built-in install** | ❌ (use file-based)                                |
 | **Config**           | `~/.windsurf/`                                     |
 | **Docs**             | [Windsurf Docs](https://docs.codeium.com/windsurf) |
 
 **Notes:**
+
 - Similar architecture to Cursor
 - Skills support is emerging
 
