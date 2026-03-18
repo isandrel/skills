@@ -33,6 +33,7 @@
 ## Debugging Pipeline Steps
 
 In verbose mode (`-v`), each step shows:
+
 ```
 [navigate] → https://www.zhihu.com ... done
 [evaluate] → input: (none)  output: [{title: "...", heat: "...", answers: 42}, ...]
@@ -41,6 +42,7 @@ In verbose mode (`-v`), each step shows:
 ```
 
 If a step outputs `undefined` or `[]`:
+
 - `fetch` step → check URL and whether auth is needed
 - `evaluate` → make sure the function returns a value (e.g., `return data.items`)
 - `select` → check the response path (use `--json` on the raw response first)
@@ -62,14 +64,14 @@ If a step outputs `undefined` or `[]`:
 
 ## Common Pitfalls
 
-| Problem | Fix |
-|---|---|
-| `evaluate` returns `undefined` | Ensure the IIFE returns a value: `(async () => { return ...; })()` |
-| Nested field access fails | Use `item.a?.b` or `${{ item.a \| default('') }}` |
-| `select` finds nothing | Log the raw response first with `select: ''` (select root) |
-| Cookies not sent | Add a `navigate` step before `fetch`/`evaluate` |
-| Missing `navigate`, session 401 | Cookie-based strategies always need `navigate` first |
-| TypeScript adapter not found | Did you add `import './site/name.js'` to `src/clis/index.ts`? |
+| Problem                         | Fix                                                                |
+| ------------------------------- | ------------------------------------------------------------------ |
+| `evaluate` returns `undefined`  | Ensure the IIFE returns a value: `(async () => { return ...; })()` |
+| Nested field access fails       | Use `item.a?.b` or `${{ item.a \| default('') }}`                  |
+| `select` finds nothing          | Log the raw response first with `select: ''` (select root)         |
+| Cookies not sent                | Add a `navigate` step before `fetch`/`evaluate`                    |
+| Missing `navigate`, session 401 | Cookie-based strategies always need `navigate` first               |
+| TypeScript adapter not found    | Did you add `import './site/name.js'` to `src/clis/index.ts`?      |
 
 ## Next
 

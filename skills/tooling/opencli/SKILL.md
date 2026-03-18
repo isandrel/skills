@@ -23,35 +23,35 @@ opencli validate <site>               # validate adapter definitions
 ## Workflow: Creating a New Adapter
 
 Progress:
+
 - [ ] Step 1: Discover the API → Read [references/01-discover-api.md](references/01-discover-api.md)
 - [ ] Step 2: Choose authentication strategy → Read [references/02-choose-strategy.md](references/02-choose-strategy.md)
 - [ ] Step 3: Write the adapter (YAML or TypeScript) → Read [references/03-write-adapter.md](references/03-write-adapter.md)
 - [ ] Step 4: Test and verify → Read [references/04-test-and-verify.md](references/04-test-and-verify.md)
 - [ ] Step 5: Register and publish → Read [references/05-register-and-publish.md](references/05-register-and-publish.md)
 
-**Default**: Run Steps 1 → 2 → 3 only (discover, choose, write).
-**Full workflow**: Run all 5 steps when the user wants a complete, tested, registered adapter.
+**Default**: Run Steps 1 → 2 → 3 only (discover, choose, write). **Full workflow**: Run all 5 steps when the user wants a complete, tested, registered adapter.
 
 ## YAML vs TypeScript Decision
 
-| Use YAML if… | Use TypeScript if… |
-|---|---|
+| Use YAML if…                                                             | Use TypeScript if…                            |
+| ------------------------------------------------------------------------ | --------------------------------------------- |
 | Purely declarative pipeline (`fetch`, `navigate`, `map`, `limit`, `tap`) | Pipeline includes `evaluate` with embedded JS |
-| No custom signing / GraphQL logic | Complex XHR interception or store injection |
-| Most cases — prefer YAML | Only when YAML is insufficient |
+| No custom signing / GraphQL logic                                        | Complex XHR interception or store injection   |
+| Most cases — prefer YAML                                                 | Only when YAML is insufficient                |
 
 ## Template Expressions (Quick Reference)
 
 Syntax: `${{ <expression> }}`
 
-| Expression | Example |
-|---|---|
-| Arg access | `${{ args.limit }}` |
-| Current item | `${{ item.title }}` |
-| Zero-based index | `${{ index + 1 }}` |
-| Raw data | `${{ data }}` |
-| Pipe filter | `${{ args.limit \| default(20) }}` |
-| Fallback | `${{ item.author \|\| 'Anonymous' }}` |
+| Expression       | Example                               |
+| ---------------- | ------------------------------------- |
+| Arg access       | `${{ args.limit }}`                   |
+| Current item     | `${{ item.title }}`                   |
+| Zero-based index | `${{ index + 1 }}`                    |
+| Raw data         | `${{ data }}`                         |
+| Pipe filter      | `${{ args.limit \| default(20) }}`    |
+| Fallback         | `${{ item.author \|\| 'Anonymous' }}` |
 
 Filters: `default`, `join`, `upper`, `lower`, `truncate`, `trim`, `replace`, `keys`, `length`, `first`, `last`
 
@@ -59,24 +59,24 @@ Filters: `default`, `join`, `upper`, `lower`, `truncate`, `trim`, `replace`, `ke
 
 See `opencli list` for the full list. Notable examples:
 
-| Site | Commands |
-|---|---|
-| bilibili | `hot`, `search`, `me`, `favorite`, `history`, `feed`, `user-videos` |
-| zhihu | `hot`, `search`, `question` |
-| github | `trending`, `search` |
-| hackernews | `top` |
-| v2ex | `hot`, `latest`, `topic` |
-| twitter | `trending` |
-| reddit | `hot` |
-| youtube | `search` |
-| yahoo-finance | `quote` |
+| Site          | Commands                                                            |
+| ------------- | ------------------------------------------------------------------- |
+| bilibili      | `hot`, `search`, `me`, `favorite`, `history`, `feed`, `user-videos` |
+| zhihu         | `hot`, `search`, `question`                                         |
+| github        | `trending`, `search`                                                |
+| hackernews    | `top`                                                               |
+| v2ex          | `hot`, `latest`, `topic`                                            |
+| twitter       | `trending`                                                          |
+| reddit        | `hot`                                                               |
+| youtube       | `search`                                                            |
+| yahoo-finance | `quote`                                                             |
 
 ## Reference Files
 
-| File | When to Read |
-|---|---|
-| [01-discover-api.md](references/01-discover-api.md) | Starting a new adapter — need to find the API endpoint |
-| [02-choose-strategy.md](references/02-choose-strategy.md) | Unsure which auth strategy (`public`/`cookie`/`header`/`intercept`/`ui`) to use |
-| [03-write-adapter.md](references/03-write-adapter.md) | Writing or editing a YAML/TypeScript adapter (includes full templates) |
-| [04-test-and-verify.md](references/04-test-and-verify.md) | Testing pipeline steps, debugging verbose output |
-| [05-register-and-publish.md](references/05-register-and-publish.md) | Registering YAML auto-discovery or adding TS import to index.ts |
+| File                                                                | When to Read                                                                    |
+| ------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| [01-discover-api.md](references/01-discover-api.md)                 | Starting a new adapter — need to find the API endpoint                          |
+| [02-choose-strategy.md](references/02-choose-strategy.md)           | Unsure which auth strategy (`public`/`cookie`/`header`/`intercept`/`ui`) to use |
+| [03-write-adapter.md](references/03-write-adapter.md)               | Writing or editing a YAML/TypeScript adapter (includes full templates)          |
+| [04-test-and-verify.md](references/04-test-and-verify.md)           | Testing pipeline steps, debugging verbose output                                |
+| [05-register-and-publish.md](references/05-register-and-publish.md) | Registering YAML auto-discovery or adding TS import to index.ts                 |

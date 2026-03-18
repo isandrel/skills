@@ -31,13 +31,13 @@ Can you fetch the URL directly with Node.js (no browser)?
 
 ## Strategy Comparison
 
-| Strategy | Speed | Browser | Complexity | Use When |
-|---|---|---|---|---|
-| `public` | Fast | No | Low | Open APIs, no auth needed |
-| `cookie` | Medium | Yes | Low | Login required, cookies sufficient |
-| `header` | Medium | Yes | Medium | CSRF tokens, Bearer tokens needed |
-| `intercept` | Medium | Yes | High | Vue/Pinia apps, XHR interception |
-| `ui` | Slow | Yes | Very High | No accessible API exists |
+| Strategy    | Speed  | Browser | Complexity | Use When                           |
+| ----------- | ------ | ------- | ---------- | ---------------------------------- |
+| `public`    | Fast   | No      | Low        | Open APIs, no auth needed          |
+| `cookie`    | Medium | Yes     | Low        | Login required, cookies sufficient |
+| `header`    | Medium | Yes     | Medium     | CSRF tokens, Bearer tokens needed  |
+| `intercept` | Medium | Yes     | High       | Vue/Pinia apps, XHR interception   |
+| `ui`        | Slow   | Yes     | Very High  | No accessible API exists           |
 
 ## Setting `browser: true/false`
 
