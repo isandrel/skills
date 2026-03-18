@@ -73,5 +73,5 @@ include_complexity = true
 # -----------------------------------------------------------------------------
 [frontmatter]
 [api]
-graphql_url = "https://leetcode.com/graphql"
+graphql_url    = "https://leetcode.com/graphql"
 graphql_url_cn = "https://leetcode.cn/graphql"
