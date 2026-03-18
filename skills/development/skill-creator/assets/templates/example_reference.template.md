@@ -1,9 +1,9 @@
 # Reference Documentation for {skill_title}
 
-This is a placeholder for detailed reference documentation.
-Replace with actual reference content or delete if not needed.
+This is a placeholder for detailed reference documentation. Replace with actual reference content or delete if not needed.
 
 Example real reference docs from other skills:
+
 - product-management/references/communication.md - Comprehensive guide for status updates
 - product-management/references/context_building.md - Deep-dive on gathering context
 - bigquery/references/ - API references and query examples
@@ -11,6 +11,7 @@ Example real reference docs from other skills:
 ## When Reference Docs Are Useful
 
 Reference docs are ideal for:
+
 - Comprehensive API documentation
 - Detailed workflow guides
 - Complex multi-step processes
@@ -20,6 +21,7 @@ Reference docs are ideal for:
 ## Structure Suggestions
 
 ### API Reference Example
+
 - Overview
 - Authentication
 - Endpoints with examples
@@ -27,6 +29,7 @@ Reference docs are ideal for:
 - Rate limits
 
 ### Workflow Guide Example
+
 - Prerequisites
 - Step-by-step instructions
 - Common patterns

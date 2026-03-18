@@ -43,8 +43,7 @@ Keep SKILL.md body to the essentials and under 500 lines to minimize context blo
 
 ## Quick start
 
-Extract text with pdfplumber:
-[code example]
+Extract text with pdfplumber: [code example]
 
 ## Advanced features
 
@@ -99,8 +98,7 @@ Use docx-js for new documents. See [DOCX-JS.md](DOCX-JS.md).
 
 For simple edits, modify the XML directly.
 
-**For tracked changes**: See [REDLINING.md](REDLINING.md)
-**For OOXML details**: See [OOXML.md](OOXML.md)
+**For tracked changes**: See [REDLINING.md](REDLINING.md) **For OOXML details**: See [OOXML.md](OOXML.md)
 ```
 
 The agent reads REDLINING.md or OOXML.md only when the user needs those features.
@@ -125,6 +123,7 @@ The skill should only contain the information needed for an AI agent to do the j
 While SKILL.md is for AI agents, README.md is for humans who will use or contribute to the skill.
 
 **What to include:**
+
 - **Screenshots/GIFs**: Show the skill in action
 - **Example Prompts**: "Try saying: 'Help me rotate this PDF'"
 - **Installation Instructions**: Clear, step-by-step setup guide
@@ -132,5 +131,6 @@ While SKILL.md is for AI agents, README.md is for humans who will use or contrib
 - **Usage Examples**: Concrete examples with expected outcomes
 
 **README.md vs SKILL.md:**
+
 - **README.md** → For humans (developers, users, contributors)
 - **SKILL.md** → For AI agents (the agent reads this to understand how to use the skill)
