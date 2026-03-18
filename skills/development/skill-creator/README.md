@@ -5,6 +5,7 @@
 A comprehensive toolkit for building modular, reusable Agent Skills that extend Claude's capabilities with specialized knowledge, workflows, and tool integrations.
 
 > **Based on [Dify's skill-creator](https://github.com/langgenius/dify/tree/main/.agents/skills/skill-creator)** with enhancements including:
+>
 > - 🎨 Modern validation with `rich` library for beautiful terminal output
 > - 📝 Externalized customizable templates
 > - ⚙️ TOML-based configuration system
@@ -33,7 +34,8 @@ cd skill-creator
 pip install pyyaml rich tomli pydantic typer
 ```
 
-> **Note:** 
+> **Note:**
+>
 > - `rich` provides beautiful terminal output with colors and emojis
 > - `pydantic` enables schema validation for configuration and data
 > - `typer` provides modern CLI argument parsing
@@ -89,15 +91,18 @@ python scripts/package_skill.py ~/skills/my-awesome-skill
 ## 📦 What's Inside
 
 ### Core Files
+
 - **SKILL.md** - Comprehensive 356-line guide on creating effective skills
 - **config.toml** - Optional configuration for customization
 
 ### Scripts
+
 - **init_skill.py** - Generate new skill scaffolding with templates
 - **validate.py** - Validate skill structure and content
 - **package_skill.py** - Create distributable .skill files
 
 ### Reference Guides
+
 - **workflows.md** - Sequential and conditional workflow patterns
 - **output-patterns.md** - Template and example patterns for quality output
 
@@ -106,16 +111,19 @@ python scripts/package_skill.py ~/skills/my-awesome-skill
 ## 📋 Installation
 
 ### Prerequisites
+
 - **Python 3.7+** (required)
 
 ### Dependencies
 
 #### Required for validation and packaging:
+
 ```bash
 pip install pyyaml
 ```
 
 #### Optional for TOML config support:
+
 ```bash
 # Python 3.10 and below
 pip install tomli
@@ -124,6 +132,7 @@ pip install tomli
 ```
 
 ### Clone or Download
+
 ```bash
 # If part of a skills repository
 cd /path/to/skills/development/skill-creator
@@ -151,6 +160,7 @@ python scripts/init_skill.py pdf-helper --path ~/skills --category productivity
 ```
 
 **Example prompts to trigger your skill:**
+
 - "Help me rotate this PDF"
 - "Extract text from this PDF document"
 - "Fill out this PDF form"
@@ -162,6 +172,7 @@ python scripts/init_skill.py data-analyzer --path ~/skills --author myname
 ```
 
 **Example prompts:**
+
 - "Analyze these quarterly sales results"
 - "Create a summary of this dataset"
 - "Find trends in this CSV file"
@@ -199,24 +210,24 @@ Customize defaults without editing code:
 
 ```toml
 [author]
-name = "your-name"  # Your name appears in new skills
+name = "your-name" # Your name appears in new skills
 
 [defaults]
-category = "productivity"  # Default category for skills
-version = "0.0.1"         # Starting version
+category = "productivity" # Default category for skills
+version = "0.0.1" # Starting version
 
 [validation]
-min_description_length = 50  # Minimum description length
-max_name_length = 64         # Maximum skill name length
+min_description_length = 50 # Minimum description length
+max_name_length = 64 # Maximum skill name length
 
 [packaging]
-output_dir = "dist"              # Where .skill files go
-exclude_patterns = [".DS_Store"]  # Files to exclude
+output_dir = "dist" # Where .skill files go
+exclude_patterns = [".DS_Store"] # Files to exclude
 
 [directories]
-create_scripts = true      # Include scripts/ directory
-create_references = true   # Include references/ directory
-create_assets = true       # Include assets/ directory
+create_scripts = true # Include scripts/ directory
+create_references = true # Include references/ directory
+create_assets = true # Include assets/ directory
 ```
 
 **Note:** All scripts work without config.toml using sensible defaults.
@@ -226,6 +237,7 @@ create_assets = true       # Include assets/ directory
 ## 📖 Documentation
 
 ### SKILL.md Guide Covers:
+
 - **Core Principles** - Conciseness, degrees of freedom, progressive disclosure
 - **Anatomy of a Skill** - SKILL.md, scripts/, references/, assets/
 - **6-Step Workflow** - From understanding to iteration
@@ -233,6 +245,7 @@ create_assets = true       # Include assets/ directory
 - **Best Practices** - What to include and exclude
 
 ### Reference Files:
+
 - **workflows.md** - How to structure sequential and conditional workflows
 - **output-patterns.md** - Templates and examples for consistent output
 
@@ -245,20 +258,24 @@ create_assets = true       # Include assets/ directory
 **Purpose:** Create new skill scaffolding
 
 **Syntax:**
+
 ```bash
 python scripts/init_skill.py <skill-name> --path <output-path> [options]
 ```
 
 **Options:**
+
 - `--category <name>` - Skill category (overrides config)
 - `--author <name>` - Author name (overrides config)
 
 **Example:**
+
 ```bash
 python scripts/init_skill.py api-client --path ~/skills --category development --author alice
 ```
 
 **What it creates:**
+
 - ✅ Skill directory with proper name
 - ✅ SKILL.md with frontmatter template
 - ✅ Example files in scripts/, references/, assets/
@@ -271,11 +288,13 @@ python scripts/init_skill.py api-client --path ~/skills --category development -
 **Purpose:** Validate skill structure and content
 
 **Syntax:**
+
 ```bash
 python scripts/validate.py <skill-directory>
 ```
 
 **Checks:**
+
 - ✅ SKILL.md exists and has valid frontmatter
 - ✅ Required fields: name, description
 - ✅ Naming conventions (hyphen-case, length limits)
@@ -283,6 +302,7 @@ python scripts/validate.py <skill-directory>
 - ✅ Description requirements (length, no angle brackets)
 
 **Example:**
+
 ```bash
 python scripts/validate.py ~/skills/my-skill
 
@@ -300,17 +320,20 @@ python scripts/validate.py ~/skills/my-skill
 **Purpose:** Create distributable .skill file
 
 **Syntax:**
+
 ```bash
 python scripts/package_skill.py <skill-directory> [output-dir]
 ```
 
 **Features:**
+
 - 🔍 Validates skill first (won't package invalid skills)
 - 📦 Creates ZIP file with .skill extension
-- 🎯 Excludes files per config (e.g., .DS_Store, __pycache__)
+- 🎯 Excludes files per config (e.g., .DS_Store, **pycache**)
 - ✅ Configurable compression level
 
 **Example:**
+
 ```bash
 python scripts/package_skill.py ~/skills/my-skill ./releases
 
@@ -331,12 +354,15 @@ python scripts/package_skill.py ~/skills/my-skill ./releases
 ## 🎯 Best Practices
 
 ### 1. Write Clear Descriptions
+
 Your SKILL.md description should include:
+
 - What the skill does
 - When to use it (specific triggers, scenarios, file types)
 - Example use cases
 
 **Good:**
+
 ```yaml
 description: |
   PDF manipulation toolkit for rotating, extracting text, and filling forms.
@@ -345,13 +371,17 @@ description: |
 ```
 
 ### 2. Use Progressive Disclosure
+
 Keep SKILL.md under 500 lines. Move detailed content to references/:
+
 - API docs → `references/api.md`
 - Comprehensive examples → `references/examples.md`
 - Schema documentation → `references/schema.md`
 
 ### 3. Include Helpful Examples
+
 In generated skills, provide concrete examples:
+
 ```python
 # scripts/example.py
 def rotate_pdf(input_path, output_path, degrees=90):
@@ -360,7 +390,9 @@ def rotate_pdf(input_path, output_path, degrees=90):
 ```
 
 ### 4. Test Your Scripts
+
 Run scripts before packaging to ensure they work:
+
 ```bash
 python ~/skills/my-skill/scripts/helper.py
 ```
@@ -370,25 +402,32 @@ python ~/skills/my-skill/scripts/helper.py
 ## 🔧 Troubleshooting
 
 ### "PyYAML is required"
+
 ```bash
 pip install pyyaml
 ```
 
 ### "Could not load config.toml"
+
 Config is optional. Scripts will use defaults. To use config:
+
 ```bash
 # Python 3.10 and below
 pip install tomli
 ```
 
 ### Validation Fails
+
 Read error message carefully. Common issues:
+
 - Description too short (< 50 chars)
 - Invalid skill name (must be hyphen-case)
 - Missing required fields (name, description)
 
 ### Package Won't Create
+
 Ensure skill passes validation first:
+
 ```bash
 python scripts/validate.py <skill-path>
 ```
@@ -414,6 +453,7 @@ skill-creator/
 ```
 
 **Generated skill structure:**
+
 ```
 my-skill/
 ├── SKILL.md                    # Skill definition
@@ -430,6 +470,7 @@ my-skill/
 ## 🤝 Contributing
 
 When creating skills:
+
 1. Follow the hyphen-case naming convention
 2. Include comprehensive descriptions
 3. Add helpful examples in references/
@@ -447,6 +488,7 @@ See LICENSE file for details.
 ## 🙋 Support
 
 For questions or issues:
+
 1. Read SKILL.md for comprehensive guidance
 2. Check references/ for design patterns
 3. Review example prompts above

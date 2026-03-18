@@ -32,6 +32,7 @@ Delete any directories you don't need.
 Executable code (Python/Bash/etc.) that can be run directly to perform specific operations.
 
 **Examples from other skills:**
+
 - PDF skill: `fill_fillable_fields.py`, `extract_form_field_info.py` - utilities for PDF manipulation
 - DOCX skill: `document.py`, `utilities.py` - Python modules for document processing
 
@@ -44,6 +45,7 @@ Executable code (Python/Bash/etc.) that can be run directly to perform specific 
 Documentation and reference material intended to be loaded into context to inform Claude's process and thinking.
 
 **Examples from other skills:**
+
 - Product management: `communication.md`, `context_building.md` - detailed workflow guides
 - BigQuery: API reference documentation and query examples
 - Finance: Schema documentation, company policies
@@ -55,6 +57,7 @@ Documentation and reference material intended to be loaded into context to infor
 Files not intended to be loaded into context, but rather used within the output Claude produces.
 
 **Examples from other skills:**
+
 - Brand styling: PowerPoint template files (.pptx), logo files
 - Frontend builder: HTML/React boilerplate project directories
 - Typography: Font files (.ttf, .woff2)
@@ -68,6 +71,7 @@ Files not intended to be loaded into context, but rather used within the output 
 ## When Reference Docs Are Useful
 
 Reference docs are ideal for:
+
 - Comprehensive API documentation
 - Detailed workflow guides
 - Complex multi-step processes
@@ -77,6 +81,7 @@ Reference docs are ideal for:
 ## Structure Suggestions
 
 ### API Reference Example
+
 - Overview
 - Authentication
 - Endpoints with examples
@@ -84,6 +89,7 @@ Reference docs are ideal for:
 - Rate limits
 
 ### Workflow Guide Example
+
 - Prerequisites
 - Step-by-step instructions
 - Common patterns

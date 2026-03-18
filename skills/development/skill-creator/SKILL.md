@@ -23,6 +23,7 @@ Skills are modular, self-contained packages that extend an AI agent's capabiliti
 For detailed principles including conciseness, freedom levels, and progressive disclosure patterns, see [references/skill-design-guide.md](references/skill-design-guide.md).
 
 **Key takeaways:**
+
 - Only add context the agent doesn't already have
 - Keep SKILL.md under 500 lines
 - Use progressive disclosure (metadata → SKILL.md → bundled resources)
@@ -52,12 +53,12 @@ Only `name` and `description` fields. The description is the primary triggering 
 
 ### Bundled Resources
 
-| Directory | Purpose | When to Use |
-|-----------|---------|-------------|
-| `scripts/` | Executable code | Same code rewritten repeatedly; deterministic reliability needed |
-| `references/` | Documentation | Claude should reference while working; keeps SKILL.md lean |
-| `assets/` | Output files | Templates, images, fonts used in final output |
-| `config.toml` | Settings | User-specific paths, dependencies, feature flags |
+| Directory     | Purpose         | When to Use                                                      |
+| ------------- | --------------- | ---------------------------------------------------------------- |
+| `scripts/`    | Executable code | Same code rewritten repeatedly; deterministic reliability needed |
+| `references/` | Documentation   | Claude should reference while working; keeps SKILL.md lean       |
+| `assets/`     | Output files    | Templates, images, fonts used in final output                    |
+| `config.toml` | Settings        | User-specific paths, dependencies, feature flags                 |
 
 **Config pattern** — use `base_dir` + relative paths:
 
@@ -82,6 +83,7 @@ output = "processed/output.json"
 Skip only when skill usage patterns are already clearly understood.
 
 Gather concrete examples of how the skill will be used:
+
 - "What functionality should the skill support?"
 - "Can you give examples of how this would be used?"
 - "What would a user say that should trigger this skill?"
@@ -89,6 +91,7 @@ Gather concrete examples of how the skill will be used:
 ### Step 2: Planning Reusable Contents
 
 Analyze each example to identify what scripts, references, and assets would help:
+
 - Repeated code → `scripts/`
 - Domain knowledge or schemas → `references/`
 - Boilerplate or templates → `assets/`
@@ -119,12 +122,12 @@ When editing, remember the skill is for another AI agent instance. Include non-o
 ## Workflow
 
 Progress:
+
 - [ ] Step 1: Do X → Read [references/01-do-x.md](references/01-do-x.md)
 - [ ] Step 2: Do Y → Read [references/02-do-y.md](references/02-do-y.md)
 - [ ] Step 3: Verify → Read [references/03-verify.md](references/03-verify.md)
 
-**Default**: Run Step 1 only.
-**Full workflow**: Run Steps 1 → 2 → 3 when user asks.
+**Default**: Run Step 1 only. **Full workflow**: Run Steps 1 → 2 → 3 when user asks.
 ```
 
 #### Start with Reusable Contents
@@ -136,6 +139,7 @@ Implement `scripts/`, `references/`, and `assets/` files first. Test scripts by 
 **Writing Guidelines:** Always use imperative/infinitive form.
 
 **Frontmatter:**
+
 - `name`: The skill name
 - `description`: Include what the skill does AND specific triggers/contexts. All "when to use" information belongs here, not in the body.
 

@@ -9,6 +9,7 @@
 [TODO: Provide a brief overview of the skill and its purpose]
 
 This skill helps with:
+
 - [TODO: Primary use case]
 - [TODO: Secondary use case]
 - [TODO: Additional capabilities]
@@ -67,23 +68,27 @@ The easiest way to use this skill is by asking your AI assistant!
 ### 💬 Example Conversation
 
 **You:**
+
 ```
 [TODO: Example user request that triggers this skill]
 ```
 
 **AI will:**
+
 1. [TODO: Step 1 - What AI does]
-2. [TODO: Step 2]  
+2. [TODO: Step 2]
 3. [TODO: Result]
 
 ### 💬 Another Example
 
 **You:**
+
 ```
 [TODO: Another example request]
 ```
 
 **Benefits of using AI:**
+
 - 🚀 Natural language interface
 - 🛡️ Context-aware execution
 - 💡 Intelligent suggestions
@@ -103,19 +108,23 @@ If you prefer direct command-line usage:
 ## 📦 What's Inside
 
 ### 📄 Core Files
+
 - **SKILL.md** - [TODO: Describe what's in SKILL.md]
 
 ### 🔧 Scripts (`scripts/`)
+
 [TODO: List and describe scripts if any]
 
 - `example.py` - [TODO: What this script does]
 
 ### 📚 References (`references/`)
+
 [TODO: List and describe reference docs if any]
 
 - `api_reference.md` - [TODO: What this contains]
 
 ### 🎨 Assets (`assets/`)
+
 [TODO: List and describe assets if any]
 
 - `example_asset.txt` - [TODO: What this is for]
@@ -129,11 +138,13 @@ If you prefer direct command-line usage:
 **Scenario:** [TODO: Describe scenario]
 
 **Steps:**
+
 1. [TODO: Step 1]
 2. [TODO: Step 2]
 3. [TODO: Result]
 
 **✨ Example prompts:**
+
 - "[TODO: Prompt example 1]"
 - "[TODO: Prompt example 2]"
 
@@ -169,9 +180,11 @@ Try these prompts to use this skill:
 ## 🔧 Troubleshooting
 
 ### Common Issue 1
+
 [TODO: Describe issue and solution]
 
 ### Common Issue 2
+
 [TODO: Describe issue and solution]
 
 ---
